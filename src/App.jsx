@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
 import Header from './components/Header'
+import TicketsList from './components/TicketsList'
 import { API_URL } from './config'
 import { setUser, setLoading } from './store/authSlice'
 
@@ -40,7 +41,7 @@ function App() {
   return (
     <div>
       <Header user={user} />
-      <h1>Welcome</h1>
+      {user && <TicketsList user={user} />}
     </div>
   )
 }
